@@ -1,8 +1,11 @@
 import { ThemeProvider } from "@/Components/ThemeProvider";
 import Providers from "@/Components/Providers";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import type { Metadata } from "next";
+import "./prosemirror.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,9 +32,11 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Providers>
+              <Navbar />
               <main className="grow">
                 {children}
               </main>
+              <Footer />
             </Providers>
           </ThemeProvider>
         </body>

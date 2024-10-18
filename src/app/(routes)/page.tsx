@@ -1,7 +1,25 @@
+import Posts from "@/Components/Posts";
+import RecentPosts from "@/Components/RecentPosts";
+import RecommendedTopics from "@/Components/RecommendedTopics";
+import WhoToFollow from "@/Components/WhoToFollow";
+
 const Home = () => {
     return (
-        <div>
-        </div>
+        <section className="mt-[65px]">
+            <div className="px-8">
+                <div className="flex flex-col gap-x-16 gap-y-6 xl:flex-row xl:items-start">
+                    <main className="flex-1 pt-20 xl:py-20">
+                        <Posts />
+                    </main>
+
+                    <aside className="flex w-full flex-col justify-between gap-6 pb-10 md:flex-row xl:sticky xl:top-[65px] xl:w-[350px] xl:flex-col xl:py-20">
+                        <RecentPosts />
+                        <RecommendedTopics />
+                        <WhoToFollow />
+                    </aside>
+                </div>
+            </div>
+        </section>
     )
 };
 
